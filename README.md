@@ -1,8 +1,15 @@
 # Wordle
 
-## Summary Statistics
+## Performance
 
-Min. 1st Qu. Median Mean 3rd Qu. Max.
-2.000 3.000 4.000 3.649 4.000 7.000
+Minimum: 2
+
+Median: 4
+
+Mean: 3.649
+
+3rd Quartile: 4
+
+Maximum: 7
 
 ![Histogram of Scores](Wordle_Histogram.png)
