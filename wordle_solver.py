@@ -134,7 +134,7 @@ while True:
                         if new_guess[ind] == new_guess[i] and (Input[ind] == '_'):
                             not_contained += [new_guess[i]]
                         else:
-                            word_list = word_list[word_list[0].str.count(new_guess[i]) == int((new_guess[i-1] == new_guess[i]) and (Input[i-1] != '_'))+int((new_guess[i-2] == new_guess[i]) and (Input[i-2] != '_'))+int((new_guess[i-3] == new_guess[i]) and (Input[i-3] != '_'))+int((new_guess[i-4] == new_guess[i]) and (Input[i-4] != '_'))]
+                            word_list = word_list[word_list[0].str.count(new_guess[i]) == sum([(new_guess[i-x] == new_guess[i]) and (Input[i-x] != '_') for x in range(1,5)])]
             elif new_guess[i] in not_contained:
                 break
             elif new_guess[i] in must_contain:
