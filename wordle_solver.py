@@ -4,7 +4,7 @@ import sys
 import time
 
 #Import Possible Words
-word_list = pd.read_csv("word_list.txt", delimiter = "\n", header=None)
+word_list = pd.read_csv("word_list.csv", header=None)
 
 #Declare list of letters that are invalid for a given position
 impos1 = []
@@ -185,8 +185,10 @@ while True:
                 break
             #Otherwise, if the corresponding letter is in must_contain
             elif new_guess[i] in must_contain:
-                #Add the letter to the corresponding element in impossibilities
-                impossibilities[i,] += [new_guess[i]]
+                for ind in range(5):
+                    if new_guess[i] != correct_word[ind]:
+                        #Add the letter to the corresponding element in impossibilities
+                        impossibilities[ind,] += [new_guess[i]]
                 #And, if it's not already in must_contain, add it
                 if new_guess[i] not in must_contain:
                     must_contain += [new_guess[i]]
