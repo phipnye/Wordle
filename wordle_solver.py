@@ -185,13 +185,8 @@ while True:
                 break
             #Otherwise, if the corresponding letter is in must_contain
             elif new_guess[i] in must_contain:
-                if new_guess[i] in new_guess[(i+1):]:
-                    impossibilities[i,] += new_guess[i]
-                    break
-                for ind in range(5):
-                    if new_guess[i] != correct_word[ind]:
-                        #Add the letter to the corresponding element in impossibilities
-                        impossibilities[ind,] += [new_guess[i]]
+                #Add the letter to the corresponding element in impossibilities
+                impossibilities[i,] += [new_guess[i]]
                 #And, if it's not already in must_contain, add it
                 if new_guess[i] not in must_contain:
                     must_contain += [new_guess[i]]
