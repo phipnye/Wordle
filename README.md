@@ -2,4 +2,4 @@
 
 ## Performance
 
-![Histogram of Scores](Wordle_Histogram.png)
+![Histogram of Scores](Output/results.png)
